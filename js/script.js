@@ -11,20 +11,22 @@ console.log(userAge);
 
 const Kilometers = prompt(`quanti kilometri dovra percorrere ha il passeggero?` ,15);
 console.log(Kilometers);
+ let Prezzo;
 
-let Result;
+Prezzo = (parseInt(Kilometers * 0.21));
+console.log(Prezzo);
 
-Result = parseInt(Kilometers * 0.21);
-console.log(Result);
+document.getElementById("finalprice").innerHTML = `<strong>il prezzo del biglietto senza nessun tipo di sconto( Tariffa Intera) è:${Prezzo}€</strong>`;
 
-if(userAge < 18){
-    Result = Result - ((Result / 100) * 20);
-    console.log(Result);
-}
+
+if(userAge < 18) {
+   Prezzo = (Prezzo - ((Prezzo / 100) * 20));
+  console.log(Prezzo);
+  document.getElementById("finalprice").innerHTML = `<strong>il prezzo del biglietto con il 20% di sconto( tariffa universitari ) è: ${Prezzo}€</strong>`;
+ }
 else if(userAge > 65){
-    Result = Result - ((Result / 100) * 40);
-    console.log(Result);
+    Prezzo = Prezzo - ((Prezzo / 100) * 40);
+    console.log(Prezzo);
+   document.getElementById("finalprice").innerHTML = `<strong>il prezzo del biglietto con il 40% di sconto ( Tariffa over65 ) è : ${Prezzo}€ </strong>`;
 }
-else{
-    console.log(Result);
-}
+
