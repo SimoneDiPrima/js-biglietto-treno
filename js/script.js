@@ -13,12 +13,10 @@ const Kilometers = prompt(`quanti kilometri dovra percorrere ha il passeggero?` 
 console.log(Kilometers);
  let Prezzo;
 
-Prezzo = (parseInt(Kilometers * 0.21));
+Prezzo = Math.abs(Kilometers * 0.21);
 console.log(Prezzo);
 
 document.getElementById("finalprice").innerHTML = `<strong>il prezzo del biglietto senza nessun tipo di sconto( Tariffa Intera) è:${Prezzo}€</strong>`;
-
-
 if(userAge < 18) {
    Prezzo = (Prezzo - ((Prezzo / 100) * 20));
   console.log(Prezzo);
